@@ -278,7 +278,8 @@ class ModelFittingApp(QWidget):
         self.setWindowTitle(WINDOW_TITLE)
         self.setWindowIcon(QIcon(TRISTAN_LOGO))
         width, height = self.GetScreenResolution()
-        self.setGeometry(width*0.05, height*0.05, width*0.9, height*0.9)
+        #self.setGeometry(width*0.05, height*0.05, width*0.9, height*0.9)
+        self.setGeometry(0, 0, width, height)
         self.setWindowFlags(QtCore.Qt.WindowMinMaxButtonsHint |  
                             QtCore.Qt.WindowCloseButtonHint)
         
@@ -690,10 +691,10 @@ class ModelFittingApp(QWidget):
         """
         layout.setAlignment(QtCore.Qt.AlignTop)
         verticalSpacer = QSpacerItem(20, 35, QSizePolicy.Minimum, QSizePolicy.Minimum)
-        layout.addItem(verticalSpacer)
-        layout.addItem(verticalSpacer)
+        #layout.addItem(verticalSpacer)
+        #layout.addItem(verticalSpacer)
 
-        # lblModelImage is used to display an a schematic
+        # lblModelImage is used to display a schematic
         # representation of the model.
         self.lblModelImage = QLabel('') 
         self.lblModelImage.setAlignment(QtCore.Qt.AlignCenter )
@@ -779,8 +780,8 @@ class ModelFittingApp(QWidget):
                     imagePath = IMAGE_FOLDER + imageName
                     pixmapModelImage = QPixmap(imagePath)
                     # Increase the size of the model image
-                    pMapWidth = pixmapModelImage.width() * 1.35
-                    pMapHeight = pixmapModelImage.height() * 1.35
+                    pMapWidth = pixmapModelImage.width() * 1.15
+                    pMapHeight = pixmapModelImage.height() * 1.15
                     pixmapModelImage = pixmapModelImage.scaled(pMapWidth, pMapHeight, 
                           QtCore.Qt.KeepAspectRatio, QtCore.Qt.SmoothTransformation)
                     self.lblModelImage.setPixmap(pixmapModelImage)
@@ -2400,7 +2401,7 @@ class ModelFittingApp(QWidget):
         
             boolUseParameterDefaultValues = True
             # If the user has changed one or more parameter values
-            # ask if they still wish to use the parameter default values
+            # ask if they still wish to use the parameter default valuesSet
             # or the values they have selected.
             if self.BatchProcessingHaveParamsChanged():
                 buttonReply = QMessageBox.question(self, 'Parameter values changed.', 
