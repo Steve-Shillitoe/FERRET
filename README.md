@@ -107,7 +107,7 @@ It is used to fit the time/MR signal data calculated by a model
 in this module to the actual Region of Interest (ROI) MR signal/time
 data using non-linear least squares. 
 
-Objects of the following 3 classes are created in modelFittingGUI.py
+Objects of the following 3 classes are created in FERRET.py
 and provide services to this class:
 	1. The ExcelWriter.py class module provides the functionality 
 	for the creation of an Excel spreadsheet to store the results 
