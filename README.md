@@ -82,7 +82,7 @@ placed in folder together with the following 2 subfolders:
 		
 Application Module Structure.
 ---------------------------
-The modelFittingGUI.py class module is the start up module
+The FERRET.py class module is the start up module
 of the FERRET application. 
 It defines the GUI and the logic providing the application's functionality.
 The GUI was built using PyQT5.
@@ -98,7 +98,7 @@ logging and the handling of exceptions in the model functions
 in the module ModelFunctions.py
 
 The module ModelFunctionsHelper.py provides an interface between 
-ModelFunctions.py & modelFittingGUI.py.  It provides a function, 
+ModelFunctions.py & FERRET.py.  It provides a function, 
 called ModelSelector, for selecting the function in ModelFunctions.py 
 that determines the MR signal/time curve using a particular model. 
 Additionally, a function called CurveFit calls the fit function 
