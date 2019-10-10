@@ -64,21 +64,15 @@ Setting up your computer to run TRISTAN Model Fitting application.
 -------------------------------------------------------
 In addition to the 32 bit version of Python 3, to run the TRISTAN model fitting application
 the following Python packages must be installed on your computer:
-	numpy
-	pyautogui
-	PyQt5
-	matplotlib
-	scipy
-	FPDF
-	openpyxl
-	lmfit
-	importlib
-
-The 9 Python files that comprise this application must be
-placed in folder together with the following 2 subfolders:
-
-	1. images subfolder containing the 7 graphics (jpg & png) files.
-	2. config subfolder holding the xml configuration file(s).
+	numpy,
+	pyautogui,
+	PyQt5,
+	matplotlib,
+	scipy,
+	FPDF,
+	openpyxl,
+	lmfit,
+	importlib.
 		
 Application Module Structure.
 ---------------------------
