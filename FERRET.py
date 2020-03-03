@@ -168,8 +168,9 @@ import pyautogui
 import logging
 from typing import List
 import datetime
+import pydicom
 
-from PyQt5.QtGui import QCursor, QIcon, QPixmap
+from PyQt5.QtGui import QCursor, QIcon, QPixmap, QImage
 from PyQt5 import QtCore
 from PyQt5.QtWidgets import QApplication, QPushButton, QDoubleSpinBox,\
      QVBoxLayout, QHBoxLayout, QGroupBox, QComboBox, QLabel,  \
@@ -378,6 +379,7 @@ class ModelFittingApp(QWidget):
         verticalSpacer = QSpacerItem(10, 60, QSizePolicy.Minimum, 
                           QSizePolicy.Minimum)
         #layout.addItem(verticalSpacer)
+        
         layout.addWidget(self.btnLoadModelLibrary)
         layout.addWidget(self.btnLoadDataFile)
         #layout.addItem(verticalSpacer)
@@ -713,6 +715,7 @@ class ModelFittingApp(QWidget):
         # it takes the `figure` instance as a parameter 
         # to its __init__ function
         self.canvas = FigureCanvas(self.figure)
+        
         # this is the Navigation widget
         # it takes the Canvas widget as a parent
         self.toolbar = NavigationToolbar(self.canvas, self)
@@ -1599,6 +1602,59 @@ class ModelFittingApp(QWidget):
             print('Error in function PopulateModelListCombo: ' + str(e))
             logger.error('Error in function PopulateModelListCombo: ' + str(e))
 
+    def LoadDICOMFile(self):
+        """TO DO"""
+        
+        try:
+            # Clear the existing plot
+            self.figure.clear()
+            self.figure.set_visible(False)
+            self.canvas.draw()
+        
+            self.HideAllControlsOnGUI()
+
+            #  Get the configuration file in XML format.
+            # The filter parameter is set so that the 
+            # user can only open an XML file.
+            defaultPath = "C:\\DICOM Files\\00000001\\"
+            fullFilePath, _ = QFileDialog.getOpenFileName(parent=self, 
+                caption="Select a DICOM file",  
+                directory=defaultPath)
+
+            if os.path.exists(fullFilePath):
+                dataset = pydicom.dcmread(fullFilePath)
+                #if 'PixelData' in dataset:
+
+                    #imageObject = QImage(dataset.pixel_array) 
+                    #pixmapDICOM = QPixmap.fromImage(imageObject)
+                    
+                   # #self.canvas.imshow(dataset.pixel_array, cmap=plt.cm.bone)
+                   # #plt.imshow(dataset.pixel_array, cmap=plt.cm.bone)
+                   # #self.canvas.draw
+                   ## plt.show()
+
+                    
+                   # #self.canvas.clear()
+                   # ax = self.figure.add_subplot(111)
+                    
+                   # ax.imshow(dataset.pixel_array, cmap=plt.cm.bone)
+                   # ax.xaxis.set_visible(False)
+                   # ax.yaxis.set_visible(False)
+                   # self.canvas.draw()
+                   
+            
+        except IOError as ioe:
+            print ('IOError in function LoadDICOMFile:' + str(ioe))
+            logger.error ('IOError in function LoadDICOMFile: cannot open file' 
+                   + str(ioe))
+        except RuntimeError as re:
+            print('Runtime error in function LoadDICOMFile: ' + str(re))
+            logger.error('Runtime error in function LoadDICOMFile: ' 
+                         + str(re))
+        except Exception as e:
+            print('Error in function LoadDICOMFile: ' + str(e))
+            logger.error('Error in function LoadDICOMFile: ' + str(e))   
+
 
     def LoadModelLibrary(self):
         """Loads the contents of an XML file containing model(s) 
@@ -2224,7 +2280,7 @@ class ModelFittingApp(QWidget):
             self.figure.set_visible(True)
         
             objSubPlot = self.figure.add_subplot(111)
-
+            
             # Get the optimum label size for the screen resolution.
             tickLabelSize, xyAxisLabelSize, titleSize = \
                 self.DetermineTextSize()
