@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\CoreModules",
+    "\\Developer",
+    "\\Developer\\ModelConfiguration",
+    "\\Developer\\ModelLibrary"
   ],
-  "SelectedNode": "\\FERRET.py",
+  "SelectedNode": "\\Developer\\ModelLibrary\\ModelFunctions.py",
   "PreviewInSolutionExplorer": false
 }
