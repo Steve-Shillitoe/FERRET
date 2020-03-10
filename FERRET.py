@@ -168,7 +168,7 @@ import pyautogui
 import logging
 from typing import List
 import datetime
-import pydicom
+#import pydicom
 
 from PyQt5.QtGui import QCursor, QIcon, QPixmap, QImage
 from PyQt5 import QtCore
