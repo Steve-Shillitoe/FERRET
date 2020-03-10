@@ -129,6 +129,58 @@ Within each pair of <parameter></parameter> tags
       </parameter>
     </parameters>
   </model>
+  <model>
+    <name>
+      <short>TRISTAN Rat Model v2.0 (7.0T)</short>
+      <long>TRISTAN Rat Model v2.0 (7.0T)</long>
+    </name>
+    <!--Name of the module containing the function-->
+    <module>ModelFunctionsTRISTAN</module>
+    <!--Name of the function implementing this model-->
+    <function>TRISTAN_Rat_Model_v2_0_7T</function>
+    <!--Name of the image describing schematically this model-->
+    <image>HighFlowSingleInletTwoCompartmentGadoxetateModel.png</image>
+    <inlet_type>single</inlet_type>
+    <!--Model input parameters-->
+    <parameters>
+      <parameter>
+        <name>
+          <short>Kbh</short>
+          <long>Biliary Efflux Rate</long>
+        </name>
+        <units>mL/min/mL</units>
+        <default>0.070686</default>
+        <step>0.01</step>
+        <precision>4</precision>
+        <display_value>
+          <min>0.01</min>
+          <max>100.0</max>
+        </display_value>
+        <constraints>
+          <lower></lower>
+          <upper></upper>
+        </constraints>
+      </parameter>
+      <parameter>
+        <name>
+          <short>Khe</short>
+          <long>Hepatocyte Uptake Rate</long>
+        </name>
+        <units>mL/min/mL</units>
+        <default>1.8157</default>
+        <step>0.1</step>
+        <precision>3</precision>
+        <display_value>
+          <min>0.0001</min>
+          <max>100.0</max>
+        </display_value>
+        <constraints>
+          <lower></lower>
+          <upper></upper>
+        </constraints>
+      </parameter>
+    </parameters>
+  </model>
 </models>
 
 
