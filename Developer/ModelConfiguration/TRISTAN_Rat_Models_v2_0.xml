@@ -83,7 +83,7 @@ Within each pair of <parameter></parameter> tags
       <long>TRISTAN Rat Model v2.0 (4.7T)</long>
     </name>
     <!--Name of the module containing the function-->
-    <module>ModelFunctions</module>
+    <module>ModelFunctionsTRISTAN</module>
     <!--Name of the function implementing this model-->
     <function>TRISTAN_Rat_Model_v2_0_4_7T</function>
     <!--Name of the image describing schematically this model-->
