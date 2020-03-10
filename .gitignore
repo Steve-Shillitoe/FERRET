@@ -3,3 +3,11 @@
 ################################################################################
 
 /TRISTAN.log
+/CoreModules/__pycache__/ExcelWriter.cpython-37.pyc
+/CoreModules/__pycache__/ExceptionHandling.cpython-37.pyc
+/CoreModules/__pycache__/MathsTools.cpython-37.pyc
+/CoreModules/__pycache__/ModelFunctionsHelper.cpython-37.pyc
+/CoreModules/__pycache__/PDFWriter.cpython-37.pyc
+/CoreModules/__pycache__/StyleSheet.cpython-37.pyc
+/CoreModules/__pycache__/XMLReader.cpython-37.pyc
+/Developer/ModelLibrary/__pycache__/ModelFunctions.cpython-37.pyc
