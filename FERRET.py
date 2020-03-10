@@ -1796,7 +1796,7 @@ class ModelFittingApp(QWidget):
                                 colNum+=1           
                 csvfile.close()
 
-                self.NormaliseSignalData()
+   #             self.NormaliseSignalData()
                 self.ConfigureGUIAfterLoadingData()
                 
         except csv.Error:
@@ -2717,7 +2717,7 @@ class ModelFittingApp(QWidget):
                                         self.signalData[key].append(float(row[colNum]))
                                     colNum+=1           
                         logger.info('Batch Processing: CSV data file {} loaded OK'.format(fullFilePath))
-            self.NormaliseSignalData()
+      #      self.NormaliseSignalData()
             return boolFileFormatOK, failureReason
         
         except csv.Error:

@@ -67,11 +67,8 @@ def TRISTAN_Rat_Model_v2_0_4_7T(xData2DArray, Kbh, Khe,
             R1_l = R10_l + DR1_l
             E1 = np.exp(-TR*R1_l)
             Sl = (1-E1)/(1-c*E1)
-            Sl0 = sum(Sl[0:baseline-1])/baseline
-            Sl_rel = Sl/Sl0
-      
-        
-            return(Sl_rel) #Returns tissue signal relative to the baseline St/St_baseline
+     
+            return(Sl) #Returns tissue signal
         
         except ZeroDivisionError as zde:
             exceptionHandler.handleDivByZeroException(zde)
@@ -137,11 +134,8 @@ def TRISTAN_Rat_Model_v2_0_7T(xData2DArray, Kbh, Khe,
             R1_l = R10_l + DR1_l
             E1 = np.exp(-TR*R1_l)
             Sl = (1-E1)/(1-c*E1)
-            Sl0 = sum(Sl[0:baseline-1])/baseline
-            Sl_rel = Sl/Sl0
-      
-        
-            return(Sl_rel) #Returns tissue signal relative to the baseline St/St_baseline
+       
+            return(Sl) #Returns tissue signal relative to the baseline St/St_baseline
         
         except ZeroDivisionError as zde:
             exceptionHandler.handleDivByZeroException(zde)
