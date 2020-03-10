@@ -169,6 +169,7 @@ import logging
 from typing import List
 import datetime
 #import pydicom
+#import try
 
 from PyQt5.QtGui import QCursor, QIcon, QPixmap, QImage
 from PyQt5 import QtCore
