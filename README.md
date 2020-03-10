@@ -1,4 +1,4 @@
-FERRET for MR Signal Model Fitting
+FERRET for MR Signal Model Fitting ()
 ----------------------
 How to use.
 ------------
